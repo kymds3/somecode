@@ -1,0 +1,28 @@
+Given a string, sort it in decreasing order based on the frequency of characters.
+Input:
+"Aabb"
+
+Output:
+"bbAa"
+
+Explanation:
+"bbaA" is also a valid answer, but "Aabb" is incorrect.
+Note that 'A' and 'a' are treated as two different characters.
+-------
+-------
+Answer:
+class Solution(object):
+    def frequencySort(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """ 
+        n = []
+        m = []
+        for i in s:
+            n.append((i, s.count(i)))
+        n = sorted(n)
+        for i in n:
+            m.append(i[0])
+        m = "".join(m)
+        return m
